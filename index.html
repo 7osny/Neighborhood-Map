@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1">
+        <title>Map project</title>
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">      
+        <script src="js/jQuery.js"></script>    
+        <script>
+        function googleSuccess() {
+                if (google) {
+                    ko.applyBindings(new ViewModel());
+                } else {
+                  alert("Could not load data from Google Maps!");
+
+                }
+            }
+        </script>     
+    </head> 
+        <body>
+<div class="container-fluid">
+        <div class ="row, text-center">
+            <div class="site-wrapper">
+                <div class="main">
+                    <div class="wrap">
+                            <section id="header">
+                                <div class="title">
+                                    <h1>Map Project</h1>
+                              </div>
+                            </section>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class ="col-md-4 title st">
+                    <h2 class = >Universitys</h2>
+                    <input id="pac-input" class="controls" placeholder="Search…" type="search" data-bind="textInput: Searchquery" >
+                    <nav id="places">
+                        <ul data-bind="foreach: Visible">
+                            <ol>
+                                <a data-bind="text: title, click: listC" href="#"></a>
+                            </ol>
+                        </ul>
+                    </nav>
+                </div>
+                <div class = "col-md-8">
+                    <div id = "map"></div>
+                </div>
+            </div>
+        <script  src="js/knockout-3.4.1.js"></script>
+        <script  src="js/app.js"></script>
+        <script async defer onerror = "mapError()" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCVeLvTLHvv4ypWRshz2VKJ3Z0xIQAE20&callback=googleSuccess"></script>
+</div>
+<footer>
+  <p>Posted by: Mohammed Hosny</p>
+  <p>Contact information: <a href="https://www.facebook.com/al7assany">
+  Facebook</a>,<a href="https://twitter.com/M__Hosny">
+  Twitter</a></p>
+</footer>
+    </body>
+</html>

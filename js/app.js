@@ -125,7 +125,7 @@ var Universitys =[
             }
           
      
-]
+];
 function ViewModel() {
     var self = this;
     self.Visible = ko.observableArray([]);
@@ -140,14 +140,14 @@ function ViewModel() {
             self.mMap()[i].setVisible(false);
             self.Visible.remove(self.mMap()[i]);
           
-           };
-        for(var i=0;i<self.mMap().length;i++) {
-            if (self.mMap()[i].title.toLowerCase().indexOf(item.toLowerCase()) >= 0) {
-                self.mMap()[i].setVisible(true);
-                self.Visible.push(self.mMap()[i]);
+           }
+        for(var j=0;j<self.mMap().length;j++) {
+            if (self.mMap()[j].title.toLowerCase().indexOf(item.toLowerCase()) >= 0) {
+                self.mMap()[j].setVisible(true);
+                self.Visible.push(self.mMap()[j]);
 
             }
-        };
+        }
     });
 
     function render() {
@@ -184,14 +184,13 @@ function ViewModel() {
                     marker.setAnimation(google.maps.Animation.BOUNCE);
                     setTimeout(function() {
                         marker.setAnimation(null);
-                    }
-                    , 1000);
+                    }, 1000);
                 }
             });
             self.Visible.push(marker);
             self.mMap.push(marker);
             marker.addListener('click', function() {
-                if (marker.getAnimation() != null) {
+                if (marker.getAnimation() !== null) {
                     marker.setAnimation(null);
                 } else {
                 	 marker.setAnimation(google.maps.Animation.BOUNCE);

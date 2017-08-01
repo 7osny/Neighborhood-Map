@@ -225,15 +225,11 @@ function ViewModel() {
       self.Visible.push(marker);
       self.mMap.push(marker);
       marker.addListener('click', function () {
-        if (marker.getAnimation() !== null) {
-          marker.setAnimation(null);
-        } else {
           marker.setAnimation(google.maps.Animation.BOUNCE);
           setTimeout(function () {
             marker.setAnimation(null);
           }, 1000);
 
-        }
         infowindow.setContent(marker.content);
         infowindow.open(map, marker);
       });

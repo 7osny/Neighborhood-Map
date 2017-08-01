@@ -176,7 +176,7 @@ function ViewModel() {
   self.Visible = ko.observableArray([]);
   self.mMap = ko.observableArray([]);
   self.Searchquery = ko.observable('');
-  self.error = ko.observable('')
+  self.error = ko.observable('');
 
   function render() {
     map = new google.maps.Map(document.getElementById('map'), {

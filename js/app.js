@@ -176,6 +176,7 @@ function ViewModel() {
   self.Visible = ko.observableArray([]);
   self.mMap = ko.observableArray([]);
   self.Searchquery = ko.observable('');
+  self.error = ko.observable('')
 
   function render() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -255,8 +256,13 @@ function ViewModel() {
       }
     }
   });
-  var ErrorMap = function () {
-    alert('Google Maps can not load');
-  };
+
   google.maps.event.addDomListener(window, 'load', render);
+
+}
+// error handling
+function googleError() {
+
+  alert("failed to get google map resources");
+  //$(".map").append('<h2>failed to get resources</h2><br>');
 }

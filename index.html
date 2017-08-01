@@ -13,7 +13,7 @@
                  if (google) {
                      ko.applyBindings(new ViewModel());
                  } else {
-                   alert("Could not load data from Google Maps!");
+          $('#map').append("<h2><p>Could not load Google Maps</p></h2>");
          
                  }
              }
@@ -52,7 +52,7 @@
          </div>
          <script  src="js/knockout-3.4.1.js"></script>
          <script  src="js/app.js"></script>
-         <script async defer onerror = "ErrorMap()" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCVeLvTLHvv4ypWRshz2VKJ3Z0xIQAE20&callback=googleSuccess"></script>
+         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCVeLvTLHvv4ypWRshz2VKJ3Z0xIQAE20&callback=googleSuccess" async defer onerror="googleError()"></script>
       </div>
       <footer>
          <p>Posted by: Mohammed Hosny</p>

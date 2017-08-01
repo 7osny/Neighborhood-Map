@@ -1,20 +1,20 @@
+/** Map Style **/
 
- /** Map Style **/
 #map {
     height: 400px;
     width: 100%;
     margin: 0;
     padding: 0;
- }
- 
-html, * {
+}
+
+html,
+* {
     padding: 0;
     margin: 0;
 }
 
-body{
-	background-color: grey;
-
+body {
+    background-color: grey;
 }
 
 .title h1 {
@@ -22,11 +22,11 @@ body{
     color: black;
 }
 
-.title h2{
-	color: black;
+.title h2 {
+    color: black;
 }
-.st
-{
-	color: black;
-	background-color: #17263c;
+
+.st {
+    color: black;
+    background-color: #17263c;
 }
